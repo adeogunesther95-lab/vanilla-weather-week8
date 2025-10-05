@@ -56,8 +56,6 @@ function handleSearchSubmit(event) {
 }
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHtml = "";
 
@@ -74,12 +72,14 @@ function displayForecast() {
               </div>
               <div class="weather-forecast-temperature">12°</div>
             </div>
-          </div>`;
+          </div>
+          `;
   });
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Lagos");
-displayForecast;
+displayForecast();
